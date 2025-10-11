@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import UserBadge from "@/community/components/UserBadge";
-import timeAgo from "@/community/utils/timeAgo";
+import UserBadge from "../components/UserBadge";
+import timeAgo from "../utils/timeAgo";
 
 
 export default function CommentThread({ comments = [], users = {} }) {
