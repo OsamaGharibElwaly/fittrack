@@ -2,8 +2,8 @@
 
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
-import { posts, users, comments } from "@/community/mockData";
-import { Header, Footer } from "@/community/layoutBridge";
+import { posts, users, comments } from "../../lib/community-data";
+import { Header, Footer } from "../../components";
 
 import PostCard from "@/community/components/PostCard";
 import CommentThread from "@/community/components/CommentThread";
