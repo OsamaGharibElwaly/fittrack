@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FitTrack Project Documentation  
 
-## Getting Started
+## Overview  
+FitTrack is a modern fitness tracking web application designed to help users monitor their workouts, nutrition, and progress in an intuitive and engaging way. The platform provides structured pages for workouts, progress tracking, nutrition guidance, community engagement, blogging, and direct contact with the team.  
 
-First, run the development server:
+The goal of FitTrack is to deliver a **seamless user experience** across devices while maintaining scalability, performance, and future-proof development practices.  
+
+---
+
+## Tech Stack  
+- **Framework**: [Next.js 15](https://nextjs.org/) with Turbopack for fast builds and rendering.  
+- **Language**: JavaScript (with React JSX).  
+- **Styling**: Tailwind CSS with custom themes (dark & light mode support).  
+- **UI Components**: Reusable `Header` and `Footer` for consistency.  
+- **Data**: Static demo data with plans to integrate APIs for real user tracking.  
+
+---
+
+## Project Structure  
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+/app
+ ├── /blog        → Blog pages with dynamic post rendering
+ ├── /contact     → Contact form and communication page
+ ├── /community   → Community & discussion hub
+ ├── /nutrition   → Nutrition tips and meal tracking
+ ├── /progress    → User progress graphs & PR logs
+ ├── /workouts    → Workout tracking and guides
+ └── /signup      → User signup and onboarding
+
+/components
+ ├── Header.jsx   → Main navigation
+ ├── Footer.jsx   → Global footer
+ └── UI elements  → Shared buttons, cards, forms
+
+/lib
+ └── posts.js     → Blog post data & user mapping
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Features  
+- **Global Layout**: Consistent `Header` & `Footer` across all pages.  
+- **Blog System**: Dynamic routes for posts with static generation.  
+- **Progress Tracking**: Charts for weight, strength, and personal records.  
+- **Community Page**: Hub for members to interact and share experiences.  
+- **Error Handling**: Centralized error page with branding.  
+- **Responsive Design**: Works seamlessly across desktop and mobile browsers.  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Future Roadmap (TODO)  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Performance Enhancements**  
+   - Implement lazy loading for heavy components (e.g., charts, images).  
+   - Add caching and CDN integration for faster global performance.  
+   - Optimize Tailwind and purge unused CSS.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **User Reporting System**  
+   - Allow users to report bugs, issues, or inappropriate content.  
+   - Admin dashboard for reviewing reports.  
+   - Notification system for resolution updates.  
 
-## Deploy on Vercel
+3. **Desktop & Mobile Integration**  
+   - Native desktop app (Electron).  
+   - Native mobile apps (React Native or Flutter).  
+   - Offline mode with local storage sync.  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Gamification**  
+   - Achievement badges for workout streaks.  
+   - Leaderboards for community engagement.  
+   - Challenges & rewards system.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Personalized Analytics**  
+   - AI-based recommendations for workouts and nutrition.  
+   - Predictive insights on progress trends.  
+   - Exportable reports (PDF/CSV).  
+
+6. **Third-Party Integrations**  
+   - Sync with wearables (Fitbit, Apple Watch, Google Fit).  
+   - Calendar integration for workout planning.  
+   - Payment integration for premium subscriptions.  
+
+---
+
+## How to Contribute / Modify  
+- To add a new page: create a new folder inside `/app` and add a `page.jsx`.  
+- To add global components: extend `/components` with new JSX files.  
+- To update blog posts: modify `/lib/posts.js`.  
+- To change global styles: update Tailwind config or `globals.css`.  
+- For error handling updates: edit the central error page in `/app/error.jsx`.  
+
+---
+
+✅ **Tip**: Keep commits small and descriptive. Use `feature/`, `fix/`, and `refactor/` branches for clarity.  
+
+
+## Short Summary (Executive Summary)  
+FitTrack is a fitness tracking web application built with **Next.js** and **Tailwind CSS**, offering users tools to monitor workouts, nutrition, and progress. The platform includes blog posts, a community hub, and responsive design for mobile and desktop.  
+
+The future roadmap focuses on **performance optimization**, **user reporting systems**, **cross-platform apps**, **gamification**, **personalized analytics**, and **third-party integrations** to expand functionality and enhance user engagement.  

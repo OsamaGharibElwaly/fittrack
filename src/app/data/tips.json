@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Broccoli: Volume Without Calories",
+    "summary": "Big plate, low calories—perfect as a side for fullness.",
+    "image": "https://images.unsplash.com/photo-1543168256-418811576931?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Vegetable", "High Fiber", "Low Cal"],
+    "goal": "Weight Loss"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Breast: Lean Protein",
+    "summary": "High-protein, low-fat—great base for muscle building.",
+    "image": "https://images.unsplash.com/photo-1604908554049-1e04c0b7a1c7?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Protein", "Meal Prep"],
+    "goal": "Muscle Gain"
+  },
+  {
+    "id": 3,
+    "title": "Salmon: Omega-3 Boost",
+    "summary": "Healthy fats that support recovery and heart health.",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Protein", "Healthy Fats", "Omega-3"],
+    "goal": "All"
+  },
+  {
+    "id": 4,
+    "title": "Greek Yogurt: Easy Protein Swap",
+    "summary": "Swap mayo with yogurt for more protein and less fat.",
+    "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Dairy", "High Protein"],
+    "goal": "Muscle Gain"
+  },
+  {
+    "id": 5,
+    "title": "Oats: Long-Lasting Energy",
+    "summary": "Complex carbs that keep you full and fuel training.",
+    "image": "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Carbs", "Whole Grain"],
+    "goal": "All"
+  },
+  {
+    "id": 6,
+    "title": "Eggs: Complete Amino Profile",
+    "summary": "Affordable, versatile, and nutrient-dense breakfast.",
+    "image": "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Protein", "Breakfast"],
+    "goal": "Muscle Gain"
+  },
+  {
+    "id": 7,
+    "title": "Avocado: Smart Fats",
+    "summary": "Add creaminess and satiety with monounsaturated fats.",
+    "image": "https://images.unsplash.com/photo-1526312426976-593c2b999d21?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Healthy Fats", "Potassium"],
+    "goal": "All"
+  },
+  {
+    "id": 8,
+    "title": "Almonds: Clean Snack",
+    "summary": "Portable mix of fats, fiber, and a bit of protein.",
+    "image": "https://images.unsplash.com/photo-1508061253366-f7da158b6d44?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Snack", "Healthy Fats"],
+    "goal": "All"
+  },
+  {
+    "id": 9,
+    "title": "Berries: Sweet with Antioxidants",
+    "summary": "Lower sugar impact—great dessert swap.",
+    "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Fruit", "Antioxidants", "Low Cal"],
+    "goal": "Weight Loss"
+  },
+  {
+    "id": 10,
+    "title": "Brown Rice: Steady Carbs",
+    "summary": "Pair with lean protein for balanced meals.",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Carbs", "Whole Grain"],
+    "goal": "Muscle Gain"
+  },
+  {
+    "id": 11,
+    "title": "Sweet Potato: Vitamin A Hero",
+    "summary": "Great pre-workout carb with fiber and micronutrients.",
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Carbs", "Fiber"],
+    "goal": "All"
+  },
+  {
+    "id": 12,
+    "title": "Quinoa: Complete Plant Protein",
+    "summary": "Gluten-free grain with all essential amino acids.",
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Plant Protein", "Carbs"],
+    "goal": "All"
+  },
+  {
+    "id": 13,
+    "title": "Cottage Cheese: Night Protein",
+    "summary": "Slow-digesting casein—nice for late snacks.",
+    "image": "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Dairy", "High Protein"],
+    "goal": "Muscle Gain"
+  },
+  {
+    "id": 14,
+    "title": "Tofu: Versatile Plant Protein",
+    "summary": "Takes flavor well—stir-fry, grill, or bake.",
+    "image": "https://images.unsplash.com/photo-1625944527288-9f1dfbec20b2?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Plant Protein", "Low Sat Fat"],
+    "goal": "All"
+  },
+  {
+    "id": 15,
+    "title": "Lentils: Fiber + Protein",
+    "summary": "Budget-friendly base for soups and bowls.",
+    "image": "https://images.unsplash.com/photo-1604908176997-43118210d5d2?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Legumes", "High Fiber"],
+    "goal": "Weight Loss"
+  },
+  {
+    "id": 16,
+    "title": "Spinach: Iron & Folate",
+    "summary": "Low-cal green you can add to almost anything.",
+    "image": "https://images.unsplash.com/photo-1512621776951-4b1e1e1d9f19?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Vegetable", "Micronutrients"],
+    "goal": "All"
+  },
+  {
+    "id": 17,
+    "title": "Banana: Quick Carb",
+    "summary": "Convenient pre-workout snack with potassium.",
+    "image": "https://images.unsplash.com/photo-1571772805064-207c8435df79?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Fruit", "Carbs"],
+    "goal": "All"
+  },
+  {
+    "id": 18,
+    "title": "Olive Oil: Heart-Healthy",
+    "summary": "Use for dressings or low-medium heat cooking.",
+    "image": "https://images.unsplash.com/photo-1464593741619-6642b1a31cdf?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Healthy Fats", "Mediterranean"],
+    "goal": "All"
+  },
+  {
+    "id": 19,
+    "title": "Chickpeas: Hummus Base",
+    "summary": "Protein + fiber—great for salads and dips.",
+    "image": "https://images.unsplash.com/photo-1604908554015-9b9ab054b022?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Legumes", "Plant Protein"],
+    "goal": "Weight Loss"
+  },
+  {
+    "id": 20,
+    "title": "Tuna (Canned): Fast Protein",
+    "summary": "Easy sandwiches and salads—choose in water.",
+    "image": "https://images.unsplash.com/photo-1625944527073-2a9da6afdd1c?q=80&w=800&auto=format&fit=crop",
+    "tags": ["Protein", "Meal Prep"],
+    "goal": "Muscle Gain"
+  }
+]
