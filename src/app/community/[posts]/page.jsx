@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { posts, users, comments } from "../../lib/community-data";
 import { Header, Footer } from "../../components";
 
-import PostCard from "./components/PostCard";
-import CommentThread from "./components/CommentThread";
+import PostCard from "../components/PostCard";
+import CommentThread from "../components/CommentThread";
 
 export default function PostDetailsPage({ params }) {
   const postId = params.posts;
