@@ -3,7 +3,8 @@
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import { posts, users, comments } from "../../lib/community-data";
-import { Header, Footer } from "../../components";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 import PostCard from "../components/PostCard";
 import CommentThread from "../components/CommentThread";
