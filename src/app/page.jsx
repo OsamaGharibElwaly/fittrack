@@ -1,15 +1,13 @@
-import Image from "next/image";
-import Header from "./components/Header";
-import Landing from "./components/Landing";
-import Footer from "./components/Footer";
+import HeroSection from "./components/home/HeroSection";
+import FeaturesGrid from "./components/home/FeaturesGrid";
+import CTABanner from "./components/home/CTABanner";
 
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <Header></Header>
-      <Landing></Landing>
-      <Footer></Footer>
-    </>
+    <div className="bg-[#0d0d0d] text-white">
+      <HeroSection />
+      <FeaturesGrid />
+      <CTABanner />
+    </div>
   );
 }
