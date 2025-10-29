@@ -1,0 +1,26 @@
+[33mfdb20dc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mphase_two[m[33m, [m[1;31morigin/phase_two[m[33m)[m HEAD@{0}: reset: moving to origin/phase_two
+[33m47b9dac[m HEAD@{1}: checkout: moving from phase_two to phase_two
+[33m47b9dac[m HEAD@{2}: commit: feat: complete phase_two implementation
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{3}: checkout: moving from main to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{4}: reset: moving to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{5}: checkout: moving from phase_two to main
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{6}: checkout: moving from phase_two to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{7}: checkout: moving from main to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{8}: reset: moving to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{9}: checkout: moving from main to main
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{10}: reset: moving to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{11}: checkout: moving from main to main
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{12}: checkout: moving from phase_two to main
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{13}: checkout: moving from main to phase_two
+[33mfd9f0c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mbackup-main-old-[m[33m, [m[1;32mbackup-main-before-force-merge[m[33m)[m HEAD@{14}: commit: Err in login fixed
+[33m57e33e0[m HEAD@{15}: commit: changed 2 lines
+[33m4e1bc03[m HEAD@{16}: commit: Error deleted
+[33m8bcc483[m HEAD@{17}: commit: file deleted
+[33mab0df09[m HEAD@{18}: commit: Error fixed
+[33mf00d2fe[m HEAD@{19}: commit: Error module not found fixed
+[33m546a671[m HEAD@{20}: commit: Error Fixed
+[33m316a83f[m HEAD@{21}: pull: Merge made by the 'ort' strategy.
+[33m210b619[m HEAD@{22}: commit: Error fixed
+[33m828e91a[m HEAD@{23}: Branch: renamed refs/heads/master to refs/heads/main
+[33m828e91a[m HEAD@{25}: commit: 1st milestone in FitTrack Project
+[33m879e1f2[m HEAD@{26}: commit (initial): Initial commit from Create Next App
