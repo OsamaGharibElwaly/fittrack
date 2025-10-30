@@ -13,6 +13,7 @@ export default function Header() {
     { name: 'Nutrition', href: '/nutrition' },
     { name: 'Progress', href: '/progress' },
     { name: 'Community', href: '/community' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ]
 

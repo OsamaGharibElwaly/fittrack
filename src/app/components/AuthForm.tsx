@@ -1,36 +1,46 @@
-// components/AuthForm.tsx
+// src/components/AuthForm.tsx
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 type AuthMode = "login" | "signup";
 
+// === Variants مع Type صريح ===
+const container: Variants = {
+  hidden: { opacity: 0, y: 8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1], // cubic-bezier بدل string
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.35,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
 export default function AuthForm({ mode }: { mode: AuthMode }) {
   const [loading, setLoading] = useState(false);
-
   const isLogin = mode === "login";
-
-  const container = {
-    hidden: { opacity: 0, y: 8 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut", staggerChildren: 0.06 },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.35 } },
-  };
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     try {
-      // TODO: hook your auth logic here
       await new Promise((r) => setTimeout(r, 900));
     } finally {
       setLoading(false);
@@ -94,7 +104,16 @@ export default function AuthForm({ mode }: { mode: AuthMode }) {
           whileTap={{ scale: loading ? 1 : 0.98 }}
           className="w-full inline-flex items-center justify-center rounded-xl bg-black px-5 py-3 text-amber-400 text-sm font-semibold hover:bg-zinc-900 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-black/40 disabled:opacity-60"
         >
-          {loading ? (isLogin ? "Signing in..." : "Creating...") : isLogin ? "Sign In" : "Create Account"}
+          {loading ? (
+            <span className="flex items-center gap-2">
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              {isLogin ? "Signing in..." : "Creating..."}
+            </span>
+          ) : isLogin ? (
+            "Sign In"
+          ) : (
+            "Create Account"
+          )}
         </motion.button>
 
         <motion.div variants={item} className="text-center text-sm text-black/70">

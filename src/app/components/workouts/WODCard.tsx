@@ -1,15 +1,10 @@
+// src/components/workouts/WODCard.tsx
 'use client';
 
-import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Flame, Clock, Play } from 'lucide-react';
+import type { WorkoutsData } from '../../lib/workouts-data';
 
-interface WorkoutOfTheDay {
-  id: number;
-  title: string;
-  description: string;
-  duration: string;
-  exercises: string[];
-}
+type WorkoutOfTheDay = NonNullable<WorkoutsData['wod']>;
 
 interface WODCardProps {
   wod: WorkoutOfTheDay;
@@ -18,22 +13,19 @@ interface WODCardProps {
 
 export default function WODCard({ wod, onStart }: WODCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-2xl p-6 shadow-xl border border-[#FFA42B]/20"
-    >
-      <div className="flex justify-between items-start mb-4">
-        <div>
-          <h3 className="text-xl font-bold text-[#FFA42B]">Workout of the Day</h3>
-          <p className="text-2xl font-bold mt-1">{wod.title}</p>
-        </div>
-        <span className="text-sm text-gray-400 bg-[#333] px-3 py-1 rounded-full">
-          {wod.duration}
-        </span>
+    <div className="bg-gradient-to-br from-[#1a1a1a] to-[#111] rounded-2xl p-6 shadow-xl border border-[#FFA42B]/20">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-2xl font-bold text-[#FFA42B]">Workout of the Day</h2>
+        <Flame className="w-8 h-8 text-[#FFA42B]" />
       </div>
 
-      <p className="text-gray-300 mb-4">{wod.description}</p>
+      <h3 className="text-xl font-semibold mb-2">{wod.title}</h3>
+      <p className="text-gray-400 text-sm mb-4">{wod.description}</p>
+
+      <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+        <Clock className="w-4 h-4" />
+        <span>{wod.duration} minutes</span>
+      </div>
 
       <div className="space-y-2 mb-6">
         {wod.exercises.map((ex, i) => (
@@ -48,9 +40,9 @@ export default function WODCard({ wod, onStart }: WODCardProps) {
         onClick={onStart}
         className="w-full py-3 bg-[#FFA42B] text-black font-bold rounded-full flex items-center justify-center gap-2 hover:bg-[#e69500] transition"
       >
-        <Play className="w-5 h-5 fill-current" />
-        Start WOD
+        <Play className="w-5 h-5" />
+        Start Workout
       </button>
-    </motion.div>
+    </div>
   );
 }

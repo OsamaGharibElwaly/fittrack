@@ -1,53 +1,54 @@
-"use client";
-import { motion } from "framer-motion";
-import { BlogPost } from "./blogData";
+'use client';
+
+import { tagIconMap } from './blogData';
+import {
+  Dumbbell,   // <-- استورد الأيقونة التي تريد استخدامها كـ fallback
+  Calendar,
+  Clock,
+} from 'lucide-react';
+import Image from 'next/image';
+import type { BlogPost } from './blogData';
 
 interface BlogCardProps {
   post: BlogPost;
   index: number;
 }
 
-export default function BlogCard({ post, index }: BlogCardProps) {
+
+export default function BlogCard({ post }: BlogCardProps) {
+  // fallback = أول أيقونة في الـ map (مثلاً Dumbbell)
+  const Icon = tagIconMap[post.tag] ?? Dumbbell;
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-[#1a1a1a] rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#FFA42B]/20 cursor-pointer group"
-    >
-      <div className="relative overflow-hidden">
-        <img
+    <div className="bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition cursor-pointer group">
+      {/* الصورة */}
+      <div className="relative h-48 overflow-hidden">
+        <Image
           src={post.image}
           alt={post.title}
-          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+          fill
+          className="object-cover group-hover:scale-105 transition"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      <div className="p-6">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-[#FFA42B] text-xs font-bold uppercase tracking-wider">
-            {post.category}
-          </span>
-          <span className="text-gray-500 text-xs">• {post.date}</span>
+        <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-xs">
+          {post.category}
         </div>
-        <h3 className="text-xl font-bold mb-3 group-hover:text-[#FFA42B] transition-colors duration-300">
+      </div>
+
+      {/* المحتوى */}
+      <div className="p-5">
+        <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+          <Icon className="w-4 h-4 text-[#FFA42B]" />
+          <span>{post.tag}</span>
+          <span>•</span>
+          <Calendar className="w-3 h-3" />
+          <span>{post.date}</span>
+        </div>
+
+        <h3 className="font-bold text-lg mb-2 line-clamp-2 group-hover:text-[#FFA42B] transition">
           {post.title}
         </h3>
-        <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-          {post.description}
-        </p>
-        <button className="text-[#FFA42B] font-semibold text-sm hover:gap-2 flex items-center gap-1 transition-all duration-300">
-          Read More
-          <motion.span
-            animate={{ x: 0 }}
-            whileHover={{ x: 4 }}
-            transition={{ duration: 0.3 }}
-          >
-            →
-          </motion.span>
-        </button>
+        <p className="text-sm text-gray-400 line-clamp-2">{post.description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 }

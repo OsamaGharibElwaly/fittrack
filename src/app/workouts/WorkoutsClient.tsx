@@ -1,10 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Target, Trophy, Plus } from 'lucide-react';
+import { Target, Dumbbell, Flame, Plus, Trophy } from 'lucide-react';
+import type { ComponentType } from 'react';
 import WODCard from '../components/workouts/WODCard';
 import PlanCard from '../components/workouts/PlanCard';
 import type { WorkoutsData } from '../lib/workouts-data';
+
+const iconComponents = {
+  dumbbell: Dumbbell,
+  flame: Flame,
+  target: Target,
+} satisfies Record<string, ComponentType<{ className?: string; size?: number }>>;
 
 const muscleGroups = ['Chest', 'Back', 'Legs', 'Shoulders', 'Arms', 'Core'] as const;
 
@@ -13,13 +19,7 @@ interface WorkoutsClientProps {
 }
 
 export default function WorkoutsClient({ initialData }: WorkoutsClientProps) {
-  // Safely destructure with defaults
-  const {
-    wod = null,
-    plans = [],
-    challenges = [],
-    progress = { lastWorkout: 'N/A', streak: 0 }
-  } = initialData || {};
+  const { wod, plans, challenges, progress } = initialData;
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -33,11 +33,7 @@ export default function WorkoutsClient({ initialData }: WorkoutsClientProps) {
 
       {/* WOD Section */}
       <section className="px-6 mt-8">
-        {wod ? (
-          <WODCard wod={wod} onStart={() => console.log('Start WOD')} />
-        ) : (
-          <p className="text-gray-400">No WOD available</p>
-        )}
+        {wod && <WODCard wod={wod} onStart={() => console.log('Start WOD')} />}
 
         <button className="w-full mt-6 py-4 bg-[#2a2a2a] text-[#FFA42B] font-bold rounded-full cursor-pointer hover:bg-[#333] transition flex items-center justify-center gap-2 border border-[#FFA42B]/20">
           <Plus className="w-5 h-5" />
@@ -47,11 +43,18 @@ export default function WorkoutsClient({ initialData }: WorkoutsClientProps) {
 
       {/* Ready Plans */}
       <section className="px-6 mt-10">
+        <h3 className="text-lg font-semibold mb-4">Ready Plans</h3>
         <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4">
-          {plans.length > 0 ? (
-            plans.map((plan) => (
-              <PlanCard key={plan.id} plan={plan} />
-            ))
+          {plans.length ? (
+            plans.map((plan) => {
+              const Icon = iconComponents[plan.icon as keyof typeof iconComponents] || Target;
+              return (
+                <PlanCard
+                  key={String(plan.id)}
+                  plan={{ ...plan, id: String(plan.id), icon: Icon }}
+                />
+              );
+            })
           ) : (
             <p className="text-gray-400">No plans available</p>
           )}
@@ -62,30 +65,22 @@ export default function WorkoutsClient({ initialData }: WorkoutsClientProps) {
       <section className="px-6 mt-10">
         <h3 className="text-lg font-semibold mb-4">Muscle Groups</h3>
         <div className="grid grid-cols-3 gap-3">
-          {muscleGroups.map((muscle, i) => (
-            <motion.div
+          {muscleGroups.map((muscle) => (
+            <div
               key={muscle}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ scale: 1.05 }}
               className="bg-[#1a1a1a] rounded-2xl p-5 text-center cursor-pointer hover:bg-[#222] transition shadow-lg"
             >
               <Target className="w-8 h-8 mx-auto text-[#FFA42B] mb-2" />
               <p className="text-sm font-medium">{muscle}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* Progress & Challenges */}
       <section className="px-6 mt-10 grid md:grid-cols-2 gap-6">
-        {/* Your Progress */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="bg-[#1a1a1a] rounded-2xl p-6 shadow-xl"
-        >
+        {/* Progress */}
+        <div className="bg-[#1a1a1a] rounded-2xl p-6 shadow-xl">
           <h3 className="text-lg font-semibold mb-4">Your Progress</h3>
           <div className="space-y-4">
             <div>
@@ -98,19 +93,15 @@ export default function WorkoutsClient({ initialData }: WorkoutsClientProps) {
               <span className="text-sm text-gray-400">days streak</span>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Challenges */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="bg-[#1a1a1a] rounded-2xl p-6 shadow-xl"
-        >
+        <div className="bg-[#1a1a1a] rounded-2xl p-6 shadow-xl">
           <h3 className="text-lg font-semibold mb-4">Challenges</h3>
           <div className="space-y-5">
-            {challenges.length > 0 ? (
-              challenges.map((ch, i) => (
-                <div key={ch.id}>
+            {challenges.length ? (
+              challenges.map((ch) => (
+                <div key={String(ch.id)}>
                   <div className="flex justify-between text-sm mb-1">
                     <span>{ch.name}</span>
                     <span className="text-gray-400">
@@ -118,23 +109,22 @@ export default function WorkoutsClient({ initialData }: WorkoutsClientProps) {
                     </span>
                   </div>
                   <div className="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(ch.progress / ch.total) * 100}%` }}
-                      transition={{ delay: i * 0.15, duration: 0.8, ease: 'easeOut' }}
-                      className="h-full bg-[#FFA42B] rounded-full"
+                    <div
+                      className="h-full bg-[#FFA42B] rounded-full transition-all"
+                      style={{ width: `${(ch.progress / ch.total) * 100}%` }}
                     />
                   </div>
                 </div>
               ))
             ) : (
-              <p className="text-gray-400">No challenges yet</p>
+              <p className="text-gray-400">No active challenges</p>
             )}
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      <footer className="mt-16 px-6 pb-8 text-center text-xs text-gray-500">
+      {/* Footer */}
+      <footer className="mt-16 px-6 pb-8 text-center text-xs text-[#0d0d0d]">
         <p>© 2025 FitTrack. All rights reserved.</p>
       </footer>
     </div>

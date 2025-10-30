@@ -1,50 +1,89 @@
-import type { WorkoutOfTheDay, WorkoutPlan, Challenge, UserProgress } from '../types/workouts';
-import { Dumbbell, Flame, Zap } from 'lucide-react';
+// src/lib/workouts-data.ts
 
-export const mockWOD: WorkoutOfTheDay = {
-  title: 'Workout of the Day',
-  description: 'A balanced full-body routine to kickstart your week.',
-  duration: '35 Mins',
-  exercises: [
-    { name: 'Push-ups', sets: '3 sets of 12' },
-    { name: 'Squats', sets: '3 sets of 15' },
-    { name: 'Plank', sets: '3 sets of 40s' },
-    { name: 'Lunges', sets: '3 sets of 10 per leg' },
-  ],
+import { Dumbbell, Flame, Zap, Target } from 'lucide-react';
+import { ComponentType } from 'react';
+
+export type WorkoutOfTheDay = {
+  id: number;
+  title: string;
+  description: string;
+  duration: number;
+  exercises: string[];
 };
 
-export const mockPlans: WorkoutPlan[] = [
-  {
+export type WorkoutPlan = {
+  id: number;
+  name: string;
+  level: 'Beginner' | 'Intermediate' | 'Advanced';
+  days: number;
+  focus: string;
+  icon: ComponentType<{ className?: string }>; // أيقونة Lucide
+};
+
+export type Challenge = {
+  id: number;
+  name: string;
+  progress: number;
+  total: number;
+  unit: string;
+};
+
+export type WorkoutsData = {
+  wod: WorkoutOfTheDay | null;
+  plans: WorkoutPlan[];
+  challenges: Challenge[];
+  progress: {
+    lastWorkout: string;
+    streak: number;
+  };
+};
+
+// === بيانات مُصححة مع `icon` ===
+export const mockWorkoutsData: WorkoutsData = {
+  wod: {
     id: 1,
-    title: 'Muscle Builder',
-    duration: '45 Mins • 5 days/wk',
-    level: 'Advanced',
-    icon: Dumbbell,
-    issues: 2,
+    title: "Full Body Burn",
+    description: "A high-intensity circuit to torch calories and build strength.",
+    duration: 30,
+    exercises: ["Push-ups", "Squats", "Burpees", "Plank", "Mountain Climbers"],
   },
-  {
-    id: 2,
-    title: 'Fat Burn',
-    duration: '30 Mins • 4 days/wk',
-    level: 'Intermediate',
-    icon: Flame,
+  plans: [
+    {
+      id: 1,
+      name: "5x5 Strength",
+      level: "Intermediate",
+      days: 3,
+      focus: "Strength",
+      icon: Dumbbell, // أيقونة
+    },
+    {
+      id: 2,
+      name: "Beginner Bodyweight",
+      level: "Beginner",
+      days: 4,
+      focus: "Mobility",
+      icon: Target, // أيقونة
+    },
+    {
+      id: 3,
+      name: "HIIT Inferno",
+      level: "Advanced",
+      days: 5,
+      focus: "Cardio",
+      icon: Flame, // أيقونة
+    },
+  ],
+  challenges: [
+    {
+      id: 1,
+      name: "Push-up Challenge",
+      progress: 45,
+      total: 100,
+      unit: "reps",
+    },
+  ],
+  progress: {
+    lastWorkout: "2025-10-29",
+    streak: 5,
   },
-  {
-    id: 3,
-    title: 'Strength',
-    duration: '60 Mins • 3 days/wk',
-    level: 'Expert',
-    icon: Zap,
-  },
-];
-
-export const mockChallenges: Challenge[] = [
-  { id: 1, name: 'May Mileage', progress: 25, total: 50, unit: 'km' },
-  { id: 2, name: 'Strength Starter', progress: 12, total: 15, unit: 'Workouts' },
-  { id: 3, name: '30-Day Plank', progress: 10, total: 30, unit: 'Days' },
-];
-
-export const mockProgress: UserProgress = {
-  lastWorkout: 'Full Body Strength',
-  streak: 12,
 };

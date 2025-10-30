@@ -4,6 +4,5 @@ import { getWorkoutsData } from '../lib/workouts-data';
 
 export default async function WorkoutsPage() {
   const data = await getWorkoutsData();
-
   return <WorkoutsClient initialData={data} />;
 }
